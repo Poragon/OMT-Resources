@@ -1,0 +1,26 @@
+local water_grid = {
+    ["resource_id"] = "fw_water",
+    ["resource_name"] = "water",
+    ["starting_amount"] = 0,
+    ["flags"] = {""},
+    ["passive_mod"] = 0,
+    ["base_capacity"] = 0,
+    ["modifying_furniture"] = {
+        ["f_water_pump_on"] = {
+            ["active_mod"] = 1000,
+            ["capacity_mod"] = 0
+        },
+        ["f_wind_mill"] = {
+            ["active_mod"] = 100,
+            ["capacity_mod"] = 0
+        },
+        ["f_water_heater"] = {
+            ["active_mod"] = 0,
+            ["capacity_mod"] = 240
+        },
+        ["f_standing_tank"] = {
+            ["active_mod"] = 0,
+            ["capacity_mod"] = 1200
+        }
+    }
+}

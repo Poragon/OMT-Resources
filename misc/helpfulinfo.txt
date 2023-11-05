@@ -1,0 +1,47 @@
+Useful functions for exterior mods
+
+table.insert(game.mod_runtime.omt_resources.resource_table_list, YOUR_RESOURCE_TABLE_HERE)
+    This function will register the given table as a resource table with omt_resources. See example_resouce_table.txt for an example.
+
+game.mod_runtime.omt_resources.grid_functions.Modify_resource_amount_call(YOUR_RESOURCE_ID_HERE, pos, AMOUNT_MOD)
+    Calling this function will return true if the AMOUNT_MOD applied to the resource grid at pos is a positive value. It will also return
+    true if the resource table has "CAN_GO_NEGITIVE" as a flag. If it returns true, the AMOUNT_MOD will be added to the grid's amount.
+    This is useful in a situation where you'd want an item to 'use' an amount of resource in the resource grid.
+    
+--------------------------------------------------------------------------------------------------------------------------
+Some structure info
+
+Resource table: it's from this table that each resource_grid is created
+-resource_id: identifier unique to each resource. | str
+-resource_name: display name for a resource | str
+-starting_amount: this value sets the amount of a resource the resource_grid starts with | number
+-passive_mod: this value is applied each hour to the amount field of each resource_grid | number
+-base_capacity: this value sets the capacity a resource_grid inately can store | number 
+-modifying furniture: this table describes what furniture interacts with the grid, and how it does
+    --active_mod: each furniture in the resource grid applies this number to the resource amount in the grid each hour
+    --capacity_mod: each furniture in the grid applies this number to the capacity of the resource grid
+-Flags: table of boolean values that have specific effects
+    --CAN_GO_NEGITIVE: Allows the resource amount in a grid to go negitive
+
+
+mod storage structure:
+
+mod_storage
+    - grid_storage
+        -- abs_omt_str
+            --- resource_id
+                ---- resource_attributes
+                ---- modifying_furniture
+                    ----- abs_ms
+                        ------ furniture_id_str
+            -- resource_id...
+        -- abs_omt_str...
+
+
+mod
+    modifying_furniture_list
+        -resource_id
+            --furniture_list
+
+    resource_table_list
+        -resource_table

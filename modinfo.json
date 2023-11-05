@@ -1,0 +1,13 @@
+[
+  {
+    "type": "MOD_INFO",
+    "id": "omt_resources",
+    "name": "OMT Resources",
+    "authors": [ "Poragon" ],
+    "description": "A LUA framework for handling resources on a per overmaptile basis via 'grids', similarly to distribution grids.",
+    "category": "content",
+    "lua_api_version": 1,
+    "dependencies": [ "bn" ],
+    "obsolete": false
+  }
+]
